@@ -64,12 +64,11 @@ jobs:
 
       - name: Failed job
         uses: rjstone/discord-webhook-notify@v1
-          if: failure()
-          with:
-            severity: error
-            details: Deployment has been failed
-            webhooksUrl: ${{ secrets.DISCORD_WEBHOOK }}
-
+        if: failure()
+        with:
+          severity: error
+          details: Deployment has been failed
+          webhooksUrl: ${{ secrets.DISCORD_WEBHOOK }}
 
   tag_release:
     # Not sure if commit itself shall have a #skip but it doesnt work
