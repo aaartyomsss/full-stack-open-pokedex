@@ -60,7 +60,7 @@ jobs:
           severity: info
           description: Nothing bad has happened
           details: New version has been deployed
-          webhooksUrl: ${{ secrets.DISCORD_WEBHOOK }}
+          webhookUrl: ${{ secrets.DISCORD_WEBHOOK }}
 
       - name: Failed job
         uses: rjstone/discord-webhook-notify@v1
@@ -68,7 +68,7 @@ jobs:
         with:
           severity: error
           details: Deployment has been failed
-          webhooksUrl: ${{ secrets.DISCORD_WEBHOOK }}
+          webhookUrl: ${{ secrets.DISCORD_WEBHOOK }}
 
   tag_release:
     # Not sure if commit itself shall have a #skip but it doesnt work
