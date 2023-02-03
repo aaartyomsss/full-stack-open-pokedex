@@ -20,6 +20,7 @@ WORKDIR /app
 ENV NODE_ENV production
 
 COPY . .
+COPY --chmod=0755 health_check.sh .
 
 RUN npm install && npm install webpack webpack-dev-server webpack-cli --save-dev --production=false 
 RUN npm run build
